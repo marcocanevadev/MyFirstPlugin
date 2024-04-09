@@ -135,7 +135,11 @@ void MyFirstPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
     auto numSamples = buffer.getNumSamples();
-    auto frac = numSamples / grain;
+    float frac = numSamples;
+    if (grain != 0) {
+        frac = numSamples / grain;
+    }
+    
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 

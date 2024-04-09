@@ -13,7 +13,7 @@ MyFirstPluginAudioProcessorEditor::MyFirstPluginAudioProcessorEditor (MyFirstPlu
     
 
     otherSlider.setSliderStyle(Slider::SliderStyle::LinearVertical);
-    otherSlider.setRange(0.0, 10, 1);
+    otherSlider.setRange(0.0, 100, 1);
     otherSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
     otherSlider.addListener(this);
     otherSlider.setValue(audioProcessor.grain, NotificationType::dontSendNotification);
